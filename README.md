@@ -1,2 +1,2 @@
-# KeoiMadBro-BackupGoogleChrome
+# BackupGoogleChrome
 Create a zip file which contains all the Chrome's profiles.
