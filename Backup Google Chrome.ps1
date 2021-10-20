@@ -4,10 +4,10 @@ Write-Host "Ricerca cartella User Data." -ForegroundColor Yellow
 
 if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
     Write-Host "Cartella ""User Data"" trovata." -ForegroundColor Green
-    Start-Sleep -Milliseconds 1000
+    Start-Sleep -Milliseconds 500
     Write-Host ""
     Write-Host "Pulizia cache prima dell'operazione di backup." -ForegroundColor Yellow
-    Start-Sleep -Milliseconds 3000
+    Start-Sleep -Milliseconds 500
 
     # Cartella "Cache"
     Write-Host "Chrome -> Cache"
@@ -162,14 +162,14 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
     }
     Write-Host ""
 
-    Start-Sleep -Milliseconds 3000
+    Start-Sleep -Milliseconds 500
 
     Write-Host "Creazione cartella di backup." -ForegroundColor Yellow
     robocopy $varCartellaChrome $varCartellaBackup /e | Out-Null
     Write-Host "Cartella di backup creata." -ForegroundColor Green
     Write-Host ""
 
-    Start-Sleep -Milliseconds 3000
+    Start-Sleep -Milliseconds 500
 
     Write-Host "Controllo presenza vecchio archivio." -ForegroundColor Yellow
     if (Test-Path $var7z) {
@@ -183,20 +183,20 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         Write-Host ""
     }
 
-    Start-Sleep -Milliseconds 3000
+    Start-Sleep -Milliseconds 500
 
     if (Test-Path $var7ztmp) {
         Remove-Item -Path $var7ztmp -Recurse -Force -EA SilentlyContinue | Out-Null
     }
 
-    Start-Sleep -Milliseconds 3000
+    Start-Sleep -Milliseconds 500
 
     Write-Host "Creazione nuovo archivio." -ForegroundColor Yellow
     7z a $var7z $varCartellaBackup\* -myx=9 -mx=9 -r -sdel
     Write-Host "Archivio creato." -ForegroundColor Green
     Write-Host ""
 
-    Start-Sleep -Milliseconds 3000
+    Start-Sleep -Milliseconds 500
 
     Write-Host "Rimozione cartella di backup."  -ForegroundColor Yellow
     Remove-Item -Path $varCartellaBackup -Recurse -Force -EA SilentlyContinue | Out-Null
