@@ -1,15 +1,15 @@
-# Translation from italian to english will start soon.
+# Translation from italian to english is in progress.
 
-Write-Host "Ricerca cartella User Data." -ForegroundColor Yellow
+Write-Host "Looking for the ""User Data"" folder." -ForegroundColor Yellow
 
 if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
-    Write-Host "Cartella ""User Data"" trovata." -ForegroundColor Green
+    Write-Host "Folder ""User Data"" found." -ForegroundColor Green
     Start-Sleep -Milliseconds 500
     Write-Host ""
-    Write-Host "Pulizia cache prima dell'operazione di backup." -ForegroundColor Yellow
+    Write-Host "Cleaning cache before backup operations." -ForegroundColor Yellow
     Start-Sleep -Milliseconds 500
 
-    # Cartella "Cache"
+    # Folder "Cache"
     Write-Host "Chrome -> Cache"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
@@ -23,7 +23,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         Remove-Item -path "$_\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     }
 
-    # Cartella "Code Cache"
+    # Folder "Code Cache"
     Write-Host "Chrome -> Code Cache"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
@@ -37,7 +37,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         Remove-Item -path "$_\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     }
     
-    # Cartella "GPUCache"
+    # Folder "GPUCache"
     Write-Host "Chrome -> GPUCache"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
@@ -51,7 +51,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         Remove-Item -path "$_\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     }
     
-    # Cartella "Service Worker\CacheStorage\"
+    # Folder "Service Worker\CacheStorage\"
     Write-Host "Chrome -> Service Worker\CacheStorage\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
@@ -65,7 +65,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         Remove-Item -path "$_\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     }
 
-    # Cartella "Service Worker\ScriptCache\"
+    # Folder "Service Worker\ScriptCache\"
     Write-Host "Chrome -> Service Worker\ScriptCache\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
@@ -79,7 +79,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         Remove-Item -path "$_\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     }
 
-    # Cartella "Application Cache\Cache\"
+    # Folder "Application Cache\Cache\"
     Write-Host "Chrome -> Application Cache\Cache\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
@@ -93,7 +93,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         Remove-Item -path "$_\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     }
     
-    # Cartella "IndexedDB\"
+    # Folder "IndexedDB\"
     Write-Host "Chrome -> IndexedDB\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
@@ -107,19 +107,19 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         Remove-Item -path "$_\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     }
 
-    # Cartella "User Data\GrShaderCache\GPUCache\"
+    # Folder "User Data\GrShaderCache\GPUCache\"
     Write-Host "Chrome -> User Data\GrShaderCache\GPUCache\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\GrShaderCache\GPUCache\" | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_*" -Recurse -Force -EA SilentlyContinue | Out-Null
     }
 
-    # Cartella "User Data\ShaderCache\GPUCache\"
+    # Folder "User Data\ShaderCache\GPUCache\"
     Write-Host "Chrome -> User Data\ShaderCache\GPUCache\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\ShaderCache\GPUCache\" | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_*" -Recurse -Force -EA SilentlyContinue | Out-Null
     }
 
-    # Cartella "User Data\PnaclTranslationCache\"
+    # Folder "User Data\PnaclTranslationCache\"
     Write-Host "Chrome -> User Data\PnaclTranslationCache\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\PnaclTranslationCache\" | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_*" -Recurse -Force -EA SilentlyContinue | Out-Null
@@ -128,26 +128,26 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
     Write-Host ""
 
     $varCartellaChrome = "C:\Users\$ENV:USERNAME\AppData\Local\Google\Chrome"
-    $varCartellaBackup = "C:\Users\$ENV:USERNAME\Backup Automatico Google Chrome - $ENV:COMPUTERNAME"
+    $varCartellaBackup = "C:\Users\$ENV:USERNAME\Google Chrome Backup - $ENV:COMPUTERNAME"
 
-    # Verifica presenza cartella \OneDrive\.
-    If ( Test-Path "C:\Users\$ENV:USERNAME\OneDrive\" ) {
+    # Looking for a OneDrive folder.
+    If ( Test-Path "$env:OneDrive\" ) {
         # Trovata.
-        $var7z = "C:\Users\$ENV:USERNAME\OneDrive\Backup Automatico Google Chrome - $ENV:COMPUTERNAME.7z"
-        $var7ztmp = "C:\Users\$ENV:USERNAME\OneDrive\Backup Automatico Google Chrome - $ENV:COMPUTERNAME.7z.tmp"
-        Write-Host "Creazione archivio di backup nel percorso -> $var7z"
+        $var7z = "$env:OneDrive\Google Chrome Backup - $ENV:COMPUTERNAME.7z"
+        $var7ztmp = "$env:OneDrive\Google Chrome Backup - $ENV:COMPUTERNAME.7z.tmp"
+        Write-Host "Creating 7zip backup archive inside the following path -> $var7z" -ForegroundColor Yellow
     }
     ElseIf ( Test-Path "C:\Users\$ENV:USERNAME\Desktop\" ) {
         # Non trovata, creazione archivio sul desktop.
-        $var7z = "C:\Users\$ENV:USERNAME\Desktop\Backup Automatico Google Chrome - $ENV:COMPUTERNAME.7z"
-        $var7ztmp = "C:\Users\$ENV:USERNAME\Desktop\Backup Automatico Google Chrome - $ENV:COMPUTERNAME.7z.tmp"
-        Write-Host "Creazione archivio di backup nel percorso -> $var7z"
+        $var7z = "C:\Users\$ENV:USERNAME\Desktop\Google Chrome Backup - $ENV:COMPUTERNAME.7z"
+        $var7ztmp = "C:\Users\$ENV:USERNAME\Desktop\Google Chrome Backup - $ENV:COMPUTERNAME.7z.tmp"
+        Write-Host "Creating 7zip backup archive inside the following path -> $var7z" -ForegroundColor Yellow
     }
     ElseIf ( Test-Path "C:\" ) {
         # Desktop non trovato, l'username non corrisponde alla cartella utente, creazione archivio nella root del C.
-        $var7z = "C:\Backup Automatico Google Chrome - $ENV:COMPUTERNAME.7z"
-        $var7ztmp = "C:\Backup Automatico Google Chrome - $ENV:COMPUTERNAME.7z.tmp"
-        Write-Host "Creazione archivio di backup nel percorso -> $var7z"
+        $var7z = "C:\Google Chrome Backup - $ENV:COMPUTERNAME.7z"
+        $var7ztmp = "C:\Google Chrome Backup - $ENV:COMPUTERNAME.7z.tmp"
+        Write-Host "Creating 7zip backup archive inside the following path -> $var7z" -ForegroundColor Yellow
     }
     Write-Host ""
 
