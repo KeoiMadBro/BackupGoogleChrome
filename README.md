@@ -1,2 +1,2 @@
 # BackupGoogleChrome
-Create a zip file which contains all the Chrome's profiles.
+Creates a zip file which contains all the Chrome's profiles.
