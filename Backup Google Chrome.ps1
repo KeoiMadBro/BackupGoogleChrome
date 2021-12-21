@@ -301,4 +301,4 @@ Else {
 }
 
 Write-Host ""
-Read-Host "Press enter to keep rollin'."
+Read-Host "Press enter to keep rollin' "
