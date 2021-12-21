@@ -9,120 +9,204 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
     Write-Host "Cleaning cache before backup operations." -ForegroundColor Yellow
     Start-Sleep -Milliseconds 500
 
-    # Folder "Profile -> Cache"
+    # Cartella "Cache"
     Write-Host "Chrome -> Cache"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Cache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
         
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Cache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
     
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Cache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
-    # Folder "Code Cache"
+    # Cartella "Code Cache"
     Write-Host "Chrome -> Code Cache"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Code Cache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
         
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Code Cache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
     
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Code Cache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
     
-    # Folder "GPUCache"
-    Write-Host "Chrome -> GPUCache"
+    # Cartella "Profile -> GPUCache"
+    Write-Host "Chrome -> Profile -> GPUCache"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\GPUCache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\GPUCache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\GPUCache\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    # Cartella "Session Storage"
+    Write-Host "Chrome -> Session Storage"
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Session Storage\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Session Storage\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Session Storage\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    # Cartella "Profile -> Sessions"
+    Write-Host "Chrome -> Profile -> Sessions"
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Sessions\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Sessions\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Sessions\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
     
-    # Folder "Service Worker\CacheStorage\"
+    # Cartella "Service Worker\CacheStorage\"
     Write-Host "Chrome -> Service Worker\CacheStorage\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
-    # Folder "Service Worker\ScriptCache\"
+    # Cartella "Service Worker\Database\"
+    Write-Host "Chrome -> Service Worker\Database\"
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    # Cartella "Service Worker\ScriptCache\"
     Write-Host "Chrome -> Service Worker\ScriptCache\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
-    # Folder "Application Cache\Cache\"
+    # Cartella "Application Cache\Cache\"
     Write-Host "Chrome -> Application Cache\Cache\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
     
-    # Folder "IndexedDB\"
+    # Cartella "IndexedDB\"
     Write-Host "Chrome -> IndexedDB\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\IndexedDB\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\IndexedDB\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_\IndexedDB\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
-    # Folder "User Data\GrShaderCache\GPUCache\"
-    Write-Host "Chrome -> User Data\GrShaderCache\GPUCache\"
-    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\GrShaderCache\GPUCache\" | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_*" -Recurse -Force -EA SilentlyContinue | Out-Null
+    # Cartella "Local Storage\leveldb\"
+    Write-Host "Chrome -> Local Storage\leveldb\"
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
-    # Folder "User Data\ShaderCache\GPUCache\"
-    Write-Host "Chrome -> User Data\ShaderCache\GPUCache\"
-    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\ShaderCache\GPUCache\" | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_*" -Recurse -Force -EA SilentlyContinue | Out-Null
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
 
-    # Folder "User Data\PnaclTranslationCache\"
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    # Cartella "Safe Browsing Network\"
+    Write-Host "Chrome -> Safe Browsing Network\"
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    # Cartella "Profile -> Storage\"
+    Write-Host "Chrome -> Profile -> Storage\"
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Storage\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Guest Profile" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Storage\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Profile ???" -Directory | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_\Storage\*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+    
+    # Cartella "User Data\GrShaderCache\"
+    Write-Host "Chrome -> User Data\GrShaderCache\"
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\GrShaderCache\" | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    # Cartella "User Data\ShaderCache\"
+    Write-Host "Chrome -> User Data\ShaderCache\"
+    Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\ShaderCache\" | % { $_.fullname } | ForEach-Object {
+        Remove-Item -Path "$_*" -Recurse -Force -EA SilentlyContinue -Verbose
+    }
+
+    # Cartella "User Data\PnaclTranslationCache\"
     Write-Host "Chrome -> User Data\PnaclTranslationCache\"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\PnaclTranslationCache\" | % { $_.fullname } | ForEach-Object {
-        Remove-Item -path "$_*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$_*" -Recurse -Force -EA SilentlyContinue -Verbose
     }
         
     Write-Host ""
