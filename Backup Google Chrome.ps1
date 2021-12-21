@@ -9,7 +9,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
     Write-Host "Cleaning cache before backup operations." -ForegroundColor Yellow
     Start-Sleep -Milliseconds 500
 
-    # Folder "Cache"
+    # Folder "Profile -> Cache"
     Write-Host "Chrome -> Cache"
     Get-ChildItem "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\" -filter "Default" -Directory | % { $_.fullname } | ForEach-Object {
         Remove-Item -path "$_\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
