@@ -215,19 +215,19 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
     $varBackupFolder = "C:\Users\$ENV:USERNAME\Google Chrome Backup - $ENV:COMPUTERNAME"
 
     # Looking for a OneDrive folder.
-    If ( Test-Path "$env:OneDrive\" ) {
+    If (Test-Path "$env:OneDrive\") {
         # OneDrive folder found.
         $var7z = "$env:OneDrive\Google Chrome Backup - $ENV:COMPUTERNAME.7z"
         $var7ztmp = "$env:OneDrive\Google Chrome Backup - $ENV:COMPUTERNAME.7z.tmp"
         Write-Host "The 7-Zip archive will be created here -> $var7z" -ForegroundColor Yellow
     }
-    ElseIf ( Test-Path "C:\Users\$ENV:USERNAME\Desktop\" ) {
+    ElseIf (Test-Path "C:\Users\$ENV:USERNAME\Desktop\") {
         # OneDrive folder not found, archive will be created in the desktop folder.
         $var7z = "C:\Users\$ENV:USERNAME\Desktop\Google Chrome Backup - $ENV:COMPUTERNAME.7z"
         $var7ztmp = "C:\Users\$ENV:USERNAME\Desktop\Google Chrome Backup - $ENV:COMPUTERNAME.7z.tmp"
         Write-Host "The 7-Zip archive will be created here -> $var7z" -ForegroundColor Yellow
     }
-    ElseIf ( Test-Path "C:\" ) {
+    ElseIf (Test-Path "C:\") {
         # Desktop folder not found, username doesn't match the user folder, 7-Zip archive will be created in C:\ .
         $var7z = "C:\Google Chrome Backup - $ENV:COMPUTERNAME.7z"
         $var7ztmp = "C:\Google Chrome Backup - $ENV:COMPUTERNAME.7z.tmp"
@@ -242,7 +242,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
     Write-Host ""
 
     Write-Host "Checking if there is an older backup folder." -ForegroundColor Yellow
-    if ( Test-Path $varBackupFolder ) {
+    if (Test-Path $varBackupFolder) {
         Write-Host "Older backup folder found, deleting it." -ForegroundColor Yellow
         Remove-Item -Path $varBackupFolder -Recurse -Force -EA SilentlyContinue | Out-Null
         Write-Host "Older backup folder deleted." -ForegroundColor Green
@@ -275,8 +275,16 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
 
     Start-Sleep -Milliseconds 500
 
+    Write-Host "Checking if there is a 7-Zip.tmp file left from an old execution of this script." -ForegroundColor Yellow
     if (Test-Path $var7ztmp) {
+        Write-Host "Older 7-Zip.tmp found, deleting it." -ForegroundColor Yellow
         Remove-Item -Path $var7ztmp -Recurse -Force -EA SilentlyContinue | Out-Null
+        Write-Host "Older 7-Zip.tmp found deleted." -ForegroundColor Green
+        Write-Host ""
+    }
+    Else {
+        Write-Host "Old 7-Zip.tmp not found." -ForegroundColor Green
+        Write-Host ""
     }
 
     Start-Sleep -Milliseconds 500
@@ -292,12 +300,12 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
     Remove-Item -Path $varBackupFolder -Recurse -Force -EA SilentlyContinue | Out-Null
     Write-Host "Backup folder removed." -ForegroundColor Green
     Write-Host ""
-    Write-Host "Done, the backup was completed successfully." -ForegroundColor Green
-    Write-Host "Backup was created in this path -> " $var7z -ForegroundColor Green
+    Write-Host "Done, the backup archive was completed successfully." -ForegroundColor Green
+    Write-Host "Backup was created here -> " $var7z -ForegroundColor Green
 }
 Else {
     Write-Host "Operation cancelled for the following reason :"
-    Write-Host """User Data"" folder not found, dheck if Google Chrome is installed inside the following path : C:\Users\>Your Username<\AppData\Googlel\Chrome\" .
+    Write-Host """User Data"" folder not found, check if Google Chrome is installed inside the following path : C:\Users\>Your Username<\AppData\Googlel\Chrome\ ."
 }
 
 Write-Host ""
