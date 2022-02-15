@@ -11,8 +11,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
 
     $totalFilesCount = 0
 
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Folder -> "Profiles's folder -> Cache".
     Write-Host "Profiles's folder -> Cache" -ForegroundColor Yellow
     # Default Profile
@@ -21,7 +20,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Cache\', '\Cache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Cache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Cache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -30,7 +29,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Cache\', '\Cache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Cache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Cache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -39,12 +38,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Cache\', '\Cache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Cache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Cache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> Code Cache"
     Write-Host "Profiles's folder -> Code Cache" -ForegroundColor Yellow
     # Default Profile
@@ -53,7 +51,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Code Cache\', '\Code Cache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Code Cache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Code Cache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -62,7 +60,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Code Cache\', '\Code Cache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Code Cache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Code Cache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -71,12 +69,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Code Cache\', '\Code Cache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Code Cache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Code Cache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Code Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> GPUCache"
     Write-Host "Profiles's folder -> GPUCache" -ForegroundColor Yellow
     # Default Profile
@@ -85,7 +82,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \GPUCache\', '\GPUCache\')
         $filescount = Get-ChildItem -Path "$fixedPath\GPUCache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\GPUCache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -94,7 +91,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \GPUCache\', '\GPUCache\')
         $filescount = Get-ChildItem -Path "$fixedPath\GPUCache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\GPUCache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -103,12 +100,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \GPUCache\', '\GPUCache\')
         $filescount = Get-ChildItem -Path "$fixedPath\GPUCache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\GPUCache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\GPUCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> Session Storage"
     Write-Host "Profiles's folder -> Session Storage" -ForegroundColor Yellow
     # Default Profile
@@ -117,7 +113,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Session Storage\', '\Session Storage\')
         $filescount = Get-ChildItem -Path "$fixedPath\Session Storage\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Session Storage\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Session Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Session Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -126,7 +122,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Session Storage\', '\Session Storage\')
         $filescount = Get-ChildItem -Path "$fixedPath\Session Storage\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Session Storage\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Session Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Session Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -135,12 +131,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Session Storage\', '\Session Storage\')
         $filescount = Get-ChildItem -Path "$fixedPath\Session Storage\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Session Storage\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Session Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Session Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> Sessions"
     Write-Host "Profiles's folder -> Sessions" -ForegroundColor Yellow
     # Default Profile
@@ -149,7 +144,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Sessions\', '\Sessions\')
         $filescount = Get-ChildItem -Path "$fixedPath\Sessions\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Sessions\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Sessions\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Sessions\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -158,7 +153,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Sessions\', '\Sessions\')
         $filescount = Get-ChildItem -Path "$fixedPath\Sessions\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Sessions\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Sessions\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Sessions\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -167,12 +162,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Sessions\', '\Sessions\')
         $filescount = Get-ChildItem -Path "$fixedPath\Sessions\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Sessions\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Sessions\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Sessions\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> Service Worker\CacheStorage\"
     Write-Host "Profiles's folder -> Service Worker\CacheStorage\" -ForegroundColor Yellow
     # Default Profile
@@ -181,7 +175,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Service Worker\CacheStorage\', '\Service Worker\CacheStorage\')
         $filescount = Get-ChildItem -Path "$fixedPath\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Service Worker\CacheStorage\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -190,7 +184,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Service Worker\CacheStorage\', '\Service Worker\CacheStorage\')
         $filescount = Get-ChildItem -Path "$fixedPath\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Service Worker\CacheStorage\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -199,12 +193,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Service Worker\CacheStorage\', '\Service Worker\CacheStorage\')
         $filescount = Get-ChildItem -Path "$fixedPath\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Service Worker\CacheStorage\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Service Worker\CacheStorage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> Service Worker\Database\"
     Write-Host "Profiles's folder -> Service Worker\Database\" -ForegroundColor Yellow
     # Default Profile
@@ -213,7 +206,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Service Worker\Database\', '\Service Worker\Database\')
         $filescount = Get-ChildItem -Path "$fixedPath\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Service Worker\Database\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -222,7 +215,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Service Worker\Database\', '\Service Worker\Database\')
         $filescount = Get-ChildItem -Path "$fixedPath\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Service Worker\Database\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -231,12 +224,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Service Worker\Database\', '\Service Worker\Database\')
         $filescount = Get-ChildItem -Path "$fixedPath\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Service Worker\Database\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Service Worker\Database\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> Service Worker\ScriptCache\"
     Write-Host "Profiles's folder -> Service Worker\ScriptCache\" -ForegroundColor Yellow
     # Default Profile
@@ -245,7 +237,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Service Worker\ScriptCache\', '\Service Worker\ScriptCache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Service Worker\ScriptCache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -254,7 +246,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Service Worker\ScriptCache\', '\Service Worker\ScriptCache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Service Worker\ScriptCache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -263,12 +255,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Service Worker\ScriptCache\', '\Service Worker\ScriptCache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Service Worker\ScriptCache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Service Worker\ScriptCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> Application Cache\Cache\"
     Write-Host "Profiles's folder -> Application Cache\Cache\" -ForegroundColor Yellow
     # Default Profile
@@ -277,7 +268,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Application Cache\Cache\', '\Application Cache\Cache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Application Cache\Cache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -286,7 +277,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Application Cache\Cache\', '\Application Cache\Cache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Application Cache\Cache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -295,12 +286,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Application Cache\Cache\', '\Application Cache\Cache\')
         $filescount = Get-ChildItem -Path "$fixedPath\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Application Cache\Cache\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Application Cache\Cache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> IndexedDB\"
     Write-Host "Profiles's folder -> IndexedDB\" -ForegroundColor Yellow
     # Default Profile
@@ -309,7 +299,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \IndexedDB\', '\IndexedDB\')
         $filescount = Get-ChildItem -Path "$fixedPath\IndexedDB\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\IndexedDB\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -318,7 +308,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \IndexedDB\', '\IndexedDB\')
         $filescount = Get-ChildItem -Path "$fixedPath\IndexedDB\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\IndexedDB\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -327,12 +317,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \IndexedDB\', '\IndexedDB\')
         $filescount = Get-ChildItem -Path "$fixedPath\IndexedDB\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\IndexedDB\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\IndexedDB\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> Local Storage\leveldb\"
     Write-Host "Profiles's folder -> Local Storage\leveldb\" -ForegroundColor Yellow
     # Default Profile
@@ -341,7 +330,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Local Storage\leveldb\', '\Local Storage\leveldb\')
         $filescount = Get-ChildItem -Path "$fixedPath\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Local Storage\leveldb\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -350,7 +339,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Local Storage\leveldb\', '\Local Storage\leveldb\')
         $filescount = Get-ChildItem -Path "$fixedPath\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Local Storage\leveldb\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -359,12 +348,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Local Storage\leveldb\', '\Local Storage\leveldb\')
         $filescount = Get-ChildItem -Path "$fixedPath\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Local Storage\leveldb\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Local Storage\leveldb\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> Safe Browsing Network"
     Write-Host "Profiles's folder -> Safe Browsing Network" -ForegroundColor Yellow
     # Default Profile
@@ -373,7 +361,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Safe Browsing Network\', '\Safe Browsing Network\')
         $filescount = Get-ChildItem -Path "$fixedPath\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Safe Browsing Network\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -382,7 +370,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Safe Browsing Network\', '\Safe Browsing Network\')
         $filescount = Get-ChildItem -Path "$fixedPath\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Safe Browsing Network\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -391,12 +379,11 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Safe Browsing Network\', '\Safe Browsing Network\')
         $filescount = Get-ChildItem -Path "$fixedPath\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Safe Browsing Network\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Safe Browsing Network\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Profiles's folder -> Storage"
     Write-Host "Profiles's folder -> Storage" -ForegroundColor Yellow
     # Default Profile
@@ -405,7 +392,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Storage\', '\Storage\')
         $filescount = Get-ChildItem -Path "$fixedPath\Storage\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Storage\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Guest Profile
@@ -414,7 +401,7 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Storage\', '\Storage\')
         $filescount = Get-ChildItem -Path "$fixedPath\Storage\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Storage\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     # Profile *
@@ -423,43 +410,33 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
         $fixedPath = $rowprofileFolders.FullName.replace(' \Storage\', '\Storage\')
         $filescount = Get-ChildItem -Path "$fixedPath\Storage\*" -Recurse -Force -EA SilentlyContinue
         Write-Host $fixedPath\Storage\ " contains " $filescount.Count " files. "
-        #Remove-Item -Path "$fixedPath\Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+        Remove-Item -Path "$fixedPath\Storage\*" -Recurse -Force -EA SilentlyContinue | Out-Null
         $totalFilesCount = $filescount.Count + $totalFilesCount
     }
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Google Chrome's root folder -> User Data\GrShaderCache\"
     Write-Host "Google Chrome's root folder -> User Data\GrShaderCache\" -ForegroundColor Yellow
     $filescount = Get-ChildItem -Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\GrShaderCache\*" -Recurse -Force -EA SilentlyContinue
     Write-Host "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\GrShaderCache\ contains " $filescount.Count " files. "
-    #Remove-Item -Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\GrShaderCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+    Remove-Item -Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\GrShaderCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     $totalFilesCount = $filescount.Count + $totalFilesCount
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+    
     # Cartella "Google Chrome's root folder -> User Data\ShaderCache\"
     Write-Host "Google Chrome's root folder -> User Data\ShaderCache\" -ForegroundColor Yellow
     $filescount = Get-ChildItem -Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\ShaderCache\*" -Recurse -Force -EA SilentlyContinue
     Write-Host "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\ShaderCache\ contains " $filescount.Count " files. "
-    #Remove-Item -Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\ShaderCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+    Remove-Item -Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\ShaderCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     $totalFilesCount = $filescount.Count + $totalFilesCount
     Write-Host ""
-    #############################################################################################################################
-    #############################################################################################################################
+
     # Cartella "Google Chrome's root folder -> User Data\PnaclTranslationCache\"
     Write-Host "Google Chrome's root folder -> User Data\PnaclTranslationCache\" -ForegroundColor Yellow
     $filescount = Get-ChildItem -Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\PnaclTranslationCache\*" -Recurse -Force -EA SilentlyContinue
     Write-Host "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\PnaclTranslationCache\ contains " $filescount.Count " files. "
-    #Remove-Item -Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\PnaclTranslationCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
+    Remove-Item -Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\PnaclTranslationCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     $totalFilesCount = $filescount.Count + $totalFilesCount
-    Write-Host ""
-    Write-Host "Total cache files deleted ---> " $totalFilesCount -ForegroundColor Cyan
-    #############################################################################################################################
-    #############################################################################################################################
-
-
-        
     Write-Host ""
     Write-Host "Total cache files deleted " $totalFilesCount -ForegroundColor Cyan
     Write-Host ""
