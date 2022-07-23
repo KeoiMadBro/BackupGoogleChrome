@@ -438,9 +438,10 @@ if (Test-Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\") {
     Remove-Item -Path "C:\Users\$env:USERNAME\AppData\Local\Google\Chrome\User Data\PnaclTranslationCache\*" -Recurse -Force -EA SilentlyContinue | Out-Null
     $totalFilesCount = $filescount.Count + $totalFilesCount
     Write-Host ""
-    Write-Host "Total cache files deleted " $totalFilesCount -ForegroundColor Cyan
+    Write-Host "Total cache files deleted -> " $totalFilesCount -ForegroundColor Cyan
     Write-Host ""
 
+    # Variables
     $varChromeFolder = "C:\Users\$ENV:USERNAME\AppData\Local\Google\Chrome"
     $varBackupFolder = "C:\Users\$ENV:USERNAME\Google Chrome Backup - $ENV:COMPUTERNAME"
 
